@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { Nav } from '../../Components/Nav';
-import { Header, PageHeader } from '../../Components/Header';
-import { userService } from '../../_services';
-
-let $ = window.jQuery;
+import { PageHeader } from '../../Components/Header';
+import ClientDetails from '../../Components/ClientDetails';
+import { clientActions } from '../../_actions';
 
 class ClientsPage extends React.Component {
 
@@ -15,7 +14,8 @@ class ClientsPage extends React.Component {
 		
 		this.state = {
 			loading : props.clients.loading,
-			clients : props.clients.clients,
+            clients : props.clients.clients,
+            activeClient : {}
         }
     }
     
@@ -27,90 +27,114 @@ class ClientsPage extends React.Component {
     }
 
 	componentDidMount = () => {
-		$(document).ready(function() {
-			$('.footable').footable();
-		});
-
-		this.loadusers();
+		this.props.dispatch(clientActions.loadClients());
 	}
-
-	loadusers = () => {
-		// userService.getUsers()
-		// 	.then(users => {
-
-		// 		if(!users){
-		// 			return;
-		// 		}
-
-		// 		this.setState({
-		// 			users : users
-		// 		});
-		// 	})
-		// 	.catch(error => {
-		// 		console.log(error);
-		// 	});
+    
+    showClient = (client) => {
+        this.setState({
+            activeClient : client
+        });
     }
-	
-	render() {
 
+    filterData = (event) => {
+        let filterBy = event.target.value;
+        let data = this.props.clients.clients;
+
+        if(filterBy != ''){
+            data = data.filter(row => {
+                let match = false;
+                Object.keys(row).map(function(key){
+                    if(row[key].toString().toLowerCase().indexOf(filterBy) > -1){
+                        match = true;
+                    }
+                })
+
+                return match;
+            })
+        }
+
+        this.setState({
+            clients : data
+        })
+    }
+    
+	render() {
 		return (
 			<div id="wrapper">
 				<Nav location={this.props.location} />
 				<div id="page-wrapper" className="gray-bg">
-					<PageHeader title="Users" crumbTitle="Users" />
-
+					<PageHeader title="Clients" crumbTitle="Clients" />
 					
                     <div className="wrapper wrapper-content animated fadeInRight ecommerce">
 						<div className="row">
-							<div className="col-lg-12">
-								<div className="ibox">
-									<div className="ibox-content">
-										<table className="footable table table-stripped toggle-arrow-tiny" data-page-size="20">
-											<thead>
-												<tr>
-													<th data-toggle="true">Name</th>
-                                                    <th>School</th>
-													<th>Email</th>
-													<th>Status</th>
-													<th className="text-right" data-sort-ignore="true">Action</th>
-												</tr>
-											</thead>
-											<tbody>
-												{this.state.clients.map((user, key) =>
-													<tr key={user._id}>
-														<td>{user.name}</td>
-                                                        <td>{user.collage}</td>
-														<td>{user.email}</td>
-														<td>
-															<span className={'label '+(user.active ? 'label-primary' : 'label-danger')}>{user.active ? 'Active' : 'Locked'  }</span>
-														</td>
-														<td className="text-right">
-															<div className="btn-group">
-                                                                <Link to={{
-																		pathname : "/user/"+user._id,
-																		params: {
-																			removeUser : this.removeUser
-																		}
-																	}} params={{ removeUser: 'this.removeUser' }} className="btn-white btn btn-xs">
-                                                                    View
-                                                                </Link>
-																{/* <button onClick={() => this.openUser(user)} className="btn-white btn btn-xs">View</button> */}
-															</div>
-														</td>
-													</tr>
-												)}
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colSpan="6">
-														<ul className="pagination pull-right"></ul>
-													</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</div>
+                                
+                            <div className="col-sm-8">
+                                <div className="ibox">
+                                    <div className="ibox-content">
+                                        <h2>Clients</h2>
+                                        <div className="input-group">
+                                            <input type="text" placeholder="Search client" onChange={this.filterData} className="input form-control" />
+                                            <span className="input-group-btn">
+                                                <button type="button" className="btn btn btn-primary"> <i className="fa fa-search"></i> Search</button>
+                                            </span>
+                                        </div>
+                                        <div className="clients-list">
+                                            <ul className="nav nav-tabs">
+                                                <span className="pull-right small text-muted">{this.state.clients.length} items</span>
+                                            </ul>
+                                        </div>
+                                        <div className="tab-content">
+                                            <div id="tab-1" className="tab-pane active">
+                                                <div className="slimScrollDiv" style={{position: 'relative', overflow: 'hidden', width: 'auto', height: '100%'}}>
+                                                    <div className="full-height-scroll" style={{overflow: 'hidden', width: 'auto', height: '100%'}}>
+                                                        <div className="table-responsive">
+                                                            <table className="table table-striped table-hover">
+                                                                <tbody>
+                                                                    {this.state.clients.map((client, key) => 
+                                                                        <tr onClick={() => this.showClient(client)} key={client.id}>
+                                                                            <td className="client-avatar"><img alt="image" src={client.icon} /> </td>
+                                                                            <td><a data-toggle="tab" href="#contact-1" className="client-link">{client.name}</a></td>
+                                                                            <td> {client.title}</td>
+                                                                            <td className="contact-type"><i className="fa fa-envelope"> </i></td>
+                                                                            <td> {client.email}</td>
+                                                                        </tr>
+                                                                    )}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div className="slimScrollBar" style={{
+                                                        background: 'rgb(0, 0, 0)',
+                                                        width: '7px',
+                                                        position: 'absolute',
+                                                        top:' 0px',
+                                                        opacity: '0.4',
+                                                        display: 'none',
+                                                        borderRadius: '7px',
+                                                        'zIndex': 99,
+                                                        'right': '1px',
+                                                        height: '365.112px'}}></div>
+                                                    <div className="slimScrollRail" style={{
+                                                        width: '7px',
+                                                        height: '100%',
+                                                        position: 'absolute', top: '0px', 
+                                                        display: 'none', 
+                                                        borderRadius: '7px',
+                                                        background: 'rgb(51, 51, 51)',
+                                                        opacity: 0.2,
+                                                         zIndex: 90,
+                                                        right: '1px'}}></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {Object.keys(this.state.activeClient).length > 0 && (
+                                <ClientDetails client={this.state.activeClient} />
+                            )}
+                            
 						</div>
 					</div>
 

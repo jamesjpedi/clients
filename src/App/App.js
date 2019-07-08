@@ -11,11 +11,7 @@ class App extends React.Component {
 
 	constructor(props){
 		super(props);
-
-		const { dispatch } = this.props;
-		history.listen((listen, action) => {
-			//
-		});
+		history.listen((listen, action) => {});
 	}
 
 	componentDidMount(){

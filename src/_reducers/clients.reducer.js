@@ -7,7 +7,7 @@ export function clients(state = initialState, action) {
         case clientsConstants.LOAD_CLIENTS:
             return {
                 loading     : true,
-                clients     : action.clients
+                clients     : []
             };
         case clientsConstants.CLIENTS_UPDATED:
             return {

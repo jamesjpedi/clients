@@ -1,0 +1,59 @@
+{
+    "success" : true,
+    "clients" : [
+        {
+            "id": 1,
+            "email": "eve.holt@reqres.in",
+            "name": "Eve",
+            "title": "Holt",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        },
+        {
+            "id": 2,
+            "email": "eve.holt@reqres.in",
+            "name": "Eve",
+            "title": "Holt",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        },
+        {
+            "id": 3,
+            "email": "eve.holt@reqres.in",
+            "name": "Eve",
+            "title": "Holt",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        },
+        {
+            "id": 4,
+            "email": "eve.holt@reqres.in",
+            "name": "Eve",
+            "title": "Holt",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        },
+        {
+            "id": 5,
+            "email": "eve.holt@reqres.in",
+            "name": "Eve",
+            "title": "Holt",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        },
+        {
+            "id": 6,
+            "email": "eve.holt@reqres.in",
+            "name": "Eve",
+            "title": "Holt",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+        }
+    ]
+}
