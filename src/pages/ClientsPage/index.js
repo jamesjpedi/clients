@@ -141,7 +141,6 @@ class ClientsPage extends React.Component {
 				</div>
 			</div>
 		);
-
 	}
 }
 
