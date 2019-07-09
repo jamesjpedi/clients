@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { Nav } from '../../Components/Nav';
 import { PageHeader } from '../../Components/Header';
 import ClientDetails from '../../Components/ClientDetails';
-import { clientActions } from '../../_actions';
+import ClientListItem from '../../Components/ClientListItem';
+import { clientActions } from '../../store/_actions';
 
+/**
+ * Client listing page component
+ * 
+ * @class ClientsPage
+ * @extends {Component}
+ */
 class ClientsPage extends React.Component {
 
 	constructor(props){
@@ -19,6 +25,7 @@ class ClientsPage extends React.Component {
         }
     }
     
+    //State updation with property updation
     componentWillReceiveProps = (props) => {
         this.setState({
             loading : props.clients.loading,
@@ -26,16 +33,24 @@ class ClientsPage extends React.Component {
         });
     }
 
+    //Load clients on component mount
 	componentDidMount = () => {
 		this.props.dispatch(clientActions.loadClients());
 	}
     
+    //Set pressed list user as selected user
     showClient = (client) => {
         this.setState({
             activeClient : client
         });
     }
 
+    /**
+     * Filter data by string
+     * 
+     * @param {object} event input value change event
+     * @returns null
+     */
     filterData = (event) => {
         let filterBy = event.target.value;
         let data = this.props.clients.clients;
@@ -91,13 +106,10 @@ class ClientsPage extends React.Component {
                                                             <table className="table table-striped table-hover">
                                                                 <tbody>
                                                                     {this.state.clients.map((client, key) => 
-                                                                        <tr onClick={() => this.showClient(client)} key={client.id}>
-                                                                            <td className="client-avatar"><img alt="image" src={client.icon} /> </td>
-                                                                            <td><a data-toggle="tab" href="#contact-1" className="client-link">{client.name}</a></td>
-                                                                            <td> {client.title}</td>
-                                                                            <td className="contact-type"><i className="fa fa-envelope"> </i></td>
-                                                                            <td> {client.email}</td>
-                                                                        </tr>
+                                                                        <ClientListItem 
+                                                                            key={key} 
+                                                                            client={client} 
+                                                                            showClient={(client) => this.showClient(client)} />
                                                                     )}
                                                                 </tbody>
                                                             </table>
@@ -111,8 +123,8 @@ class ClientsPage extends React.Component {
                                                         opacity: '0.4',
                                                         display: 'none',
                                                         borderRadius: '7px',
-                                                        'zIndex': 99,
-                                                        'right': '1px',
+                                                        zIndex: 99,
+                                                        right: '1px',
                                                         height: '365.112px'}}></div>
                                                     <div className="slimScrollRail" style={{
                                                         width: '7px',
@@ -122,7 +134,7 @@ class ClientsPage extends React.Component {
                                                         borderRadius: '7px',
                                                         background: 'rgb(51, 51, 51)',
                                                         opacity: 0.2,
-                                                         zIndex: 90,
+                                                        zIndex: 90,
                                                         right: '1px'}}></div>
                                                 </div>
                                             </div>

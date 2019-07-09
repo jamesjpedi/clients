@@ -13,7 +13,7 @@
         {
             "id": 2,
             "email": "eve.holt@reqres.in",
-            "name": "Eve",
+            "name": "Eve sample",
             "title": "Holt",
             "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",

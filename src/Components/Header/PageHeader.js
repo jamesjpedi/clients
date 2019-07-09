@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-let $ = window.jQuery;
-
+/**
+ * Pageheader component
+ * 
+ * @class PageHeader
+ * @extends {Component}
+ */
 export class PageHeader extends Component {
 	constructor(props) {
 		super(props);
-	}
-
-	componentDidMount() {
-		let $this = this;
 	}
 
 	render() {

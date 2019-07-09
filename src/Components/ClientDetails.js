@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-
+//Functional component to show client details
 export default function ClientDetails(props){
     return(
         <div className="col-sm-4">

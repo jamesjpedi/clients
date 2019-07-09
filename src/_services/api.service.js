@@ -4,6 +4,12 @@ export const apiService = {
 	loadClients
 }
 
+/**
+ * Load clients function
+ * Fetches data from server
+ * 
+ * @returns {fetch} fetch object
+ */
 function loadClients() {	
 	const requestOptions = {
 		method : 'GET',
@@ -24,6 +30,12 @@ function loadClients() {
 		})
 }
 
+/**
+ * Convert and format fetch request data
+ * 
+ * @param {fetch} response 
+ * @returns {json} formatted data
+ */
 function handleResponse(response) {
 	return response.text().then(text => {
 		const data = text && JSON.parse(text);

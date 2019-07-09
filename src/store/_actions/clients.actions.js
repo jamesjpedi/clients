@@ -1,10 +1,11 @@
 import { clientsConstants } from '../_constants';
-import { apiService } from '../_services';
+import { apiService } from '../../_services';
 
 export const clientActions = {
     loadClients
 }
 
+//Redux actions
 function loadClients() {
     return dispatch => {
         dispatch(load());
