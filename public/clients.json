@@ -3,27 +3,27 @@
     "clients" : [
         {
             "id": 1,
-            "email": "eve.holt@reqres.in",
-            "name": "Eve",
-            "title": "Holt",
+            "email": "andrew.rodriquez82@example.com",
+            "name": "Andrew Rodriquez",
+            "title": "2325 Lakewview Drcowper St",
             "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
         },
         {
             "id": 2,
-            "email": "eve.holt@reqres.in",
-            "name": "Eve sample",
-            "title": "Holt",
+            "email": "sergio.lee50@example.com",
+            "name": "Sergio Lee",
+            "title": "6102 W Tropical Pkwy",
             "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
         },
         {
             "id": 3,
-            "email": "eve.holt@reqres.in",
-            "name": "Eve",
-            "title": "Holt",
+            "email": "jeff.gardner46@example.com",
+            "name": "Jeff Gardner",
+            "title": "8798 Marsh Ln",
             "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
@@ -39,18 +39,18 @@
         },
         {
             "id": 5,
-            "email": "eve.holt@reqres.in",
-            "name": "Eve",
-            "title": "Holt",
+            "email": "corey.craig57@example.com",
+            "name": "Corey Craig",
+            "title": "1831 Auburn Ave",
             "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
         },
         {
             "id": 6,
-            "email": "eve.holt@reqres.in",
-            "name": "Eve",
-            "title": "Holt",
+            "email": "austin.horton96@example.com",
+            "name": "Austin Horton",
+            "title": "5214 China Ave",
             "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "icon": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/24.jpg",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
