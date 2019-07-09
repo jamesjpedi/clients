@@ -98,15 +98,19 @@ class ClientsPage extends React.Component {
                                                 <span className="pull-right small text-muted">{this.state.clients.length} items</span>
                                             </ul>
                                         </div>
+                                        
                                         <div className="tab-content">
                                             <div id="tab-1" className="tab-pane active">
                                                 <div className="slimScrollDiv" style={{position: 'relative', overflow: 'hidden', width: 'auto', height: '100%'}}>
                                                     <div className="full-height-scroll" style={{overflow: 'hidden', width: 'auto', height: '100%'}}>
                                                         <div className="table-responsive">
+                                                            {this.state.clients.length == 0 && (
+                                                                <p style={{textAlign: 'center', marginTop: '10px'}}>No clients found!</p>
+                                                            )}
                                                             <table className="table table-striped table-hover">
                                                                 <tbody>
                                                                     {this.state.clients.map((client, key) => 
-                                                                        <ClientListItem 
+                                                                        <ClientListItem
                                                                             key={key} 
                                                                             client={client} 
                                                                             showClient={(client) => this.showClient(client)} />

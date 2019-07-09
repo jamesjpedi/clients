@@ -1,5 +1,5 @@
 const config = {
-    apiUrl : 'https://clients-js.herokuapp.com/'
+    apiUrl : 'http://localhost:3000/'
 }
 
 module.exports = config;
